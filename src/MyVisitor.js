@@ -16,14 +16,16 @@ export class MyVisitor extends SimpleBooleanVisitor {
     visitBinaryExpression(ctx) {
         console.log('visitBinaryExpression', ctx.getText());
 
+        console.log('- get left');
         const left  = this.asBoolean(ctx.left);
+        console.log('- get right');
         const right = this.asBoolean(ctx.right);
 
-        if (ctx.op.AND())  { return left && right; }
-        if (ctx.op.OR())   { return left || right; }
-        if (ctx.op.XOR())  { return (left && !right) || (!left && right); }
-        if (ctx.op.NOR())  { return !(left || right); }
-        if (ctx.op.NAND()) { return !(left && right); }
+        if (ctx.op.AND())  { console.log('- AND');  return left && right; }
+        if (ctx.op.OR())   { console.log('- OR');   return left || right; }
+        if (ctx.op.XOR())  { console.log('- XOR');  return (left && !right) || (!left && right); }
+        if (ctx.op.NOR())  { console.log('- NOR');  return !(left || right); }
+        if (ctx.op.NAND()) { console.log('- NAND'); return !(left && right); }
 
         throw  new Error(`Unidentified operator "${ctx.op.getText()}"`);
     }

@@ -9,13 +9,14 @@ import {MyVisitor} from "./MyVisitor.js";
 
 const variables = new Map();
 variables.set('A' , 10);
-variables.set('B' , 10);
-
-const input = "true or false or (A=B)"
-const chars = new antlr4.InputStream(input);
-const lexer = new SimpleBooleanLexer(chars);
-const tokens  = new antlr4.CommonTokenStream(lexer);
-const parser = new SimpleBooleanParser(tokens);
+variables.set('B' , 11);
 const visitor = new MyVisitor(variables);
+
+const input  = "true and false And (B = A)"
+const chars  = new antlr4.InputStream(input);
+const lexer  = new SimpleBooleanLexer(chars);
+const tokens = new antlr4.CommonTokenStream(lexer);
+const parser = new SimpleBooleanParser(tokens);
 const result = visitor.visit(parser.parse())
+
 console.log(`result: ${result}`)

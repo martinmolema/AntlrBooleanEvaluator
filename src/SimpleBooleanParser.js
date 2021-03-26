@@ -1,4 +1,4 @@
-// Generated from SimpleBoolean.g4 by ANTLR 4.9
+// Generated from SimpleBoolean.g4 by ANTLR 4.9.2
 // jshint ignore: start
 import antlr4 from 'antlr4';
 import SimpleBooleanListener from './SimpleBooleanListener.js';
@@ -180,7 +180,7 @@ export default class SimpleBooleanParser extends antlr4.Parser {
 	        this._ctx.stop = this._input.LT(-1);
 	        this.state = 35;
 	        this._errHandler.sync(this);
-	        let _alt = this._interp.adaptivePredict(this._input,2,this._ctx)
+	        var _alt = this._interp.adaptivePredict(this._input,2,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
 	            if(_alt===1) {
 	                if(this._parseListeners!==null) {
