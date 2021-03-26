@@ -11,7 +11,7 @@ const variables = new Map();
 variables.set('A' , 10);
 variables.set('B' , 10);
 
-const input = "a xor b"
+const input = "true or false or (A=B)"
 const chars = new antlr4.InputStream(input);
 const lexer = new SimpleBooleanLexer(chars);
 const tokens  = new antlr4.CommonTokenStream(lexer);
